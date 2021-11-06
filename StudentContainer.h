@@ -7,7 +7,11 @@
 
 
 class StudentContainer {
+public:
+    StudentContainer();
 
+private:
+    int numberOfStudents;
 };
 
 

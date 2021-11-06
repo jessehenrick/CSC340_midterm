@@ -3,3 +3,7 @@
 //
 
 #include "StudentContainer.h"
+
+StudentContainer::StudentContainer() {
+    numberOfStudents = 0;
+}
