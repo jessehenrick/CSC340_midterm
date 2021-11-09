@@ -6,6 +6,42 @@
 
 using namespace std;
 
+int showMenu(){
+    char userInput;
+    while(true){
+        cout<<endl<<endl<<"*MENU*\n\n1- Probability Of Male Drinkers\n2- Probability Of Female Drinkers\n3- Probability Of Age Chosen To Be Underaged Drinking (15-19)\n4- School With The Higher Rate of Underage Drinking\n5- Most Frequent Age of Drinker Between Both Schools \n6- Profile of the student most likely to drink\n7- Most Probable Home Type To Drink\nq- Quit"<<endl<<endl;
+        cin>>userInput;
+        switch(userInput){
+            case '1':
+                cout<<"option 1"<<endl;
+                break;
+            case '2':
+                cout<<"option 2"<<endl;
+                break;
+            case '3':
+                cout<<"option 3"<<endl;
+                break;
+            case '4':
+                cout<<"option 4"<<endl;
+                break;
+            case '5':
+                cout<<"option 5"<<endl;
+                break;
+            case '6':
+                cout<<"option 6"<<endl;
+                break;
+            case '7':
+                cout<<"option 7"<<endl;
+                break;
+            case 'q':
+                cout<<"Quitting..."<<endl;
+                return 0;
+            default:
+                cout<<"Not a valid option. Try again.";
+        }
+    }
+
+}
 int printStringVector(vector <string> &vec){
     for(long unsigned int i=0; i<vec.size(); i++){
         cout<<vec.at(i)<<", ";
@@ -91,9 +127,11 @@ int main() {
     vector <string> addressVec;
     vector <string> famSizeVec;
 
+    //I used the file path in my PC bc it works, but idk if it'll work on other devices, so i guess this
+    // has to be changed on future implementations.
     getFileData("C:/Users/pablo/CLionProjects/CSC340_midterm/student_data/student-mat.csv",schoolVec,sexVec,ageVec, addressVec, famSizeVec);
     getFileData("C:/Users/pablo/CLionProjects/CSC340_midterm/student_data/student-por.csv",schoolVec,sexVec,ageVec, addressVec, famSizeVec);
-
+    showMenu();
 
     return 0;
 }
