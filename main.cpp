@@ -38,6 +38,7 @@ int showMenu(){
                 return 0;
             default:
                 cout<<"Not a valid option. Try again.";
+                break;
         }
     }
 
