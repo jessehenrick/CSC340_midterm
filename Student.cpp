@@ -42,11 +42,7 @@ double getMostProbableSchool(){
     cout << "choose g for Gabriel Pereira or m for Mousinho da Silveira";
     char input;
     cin >> input;
-    if(input != 'g' || input != 'm'){
-        cout << "try again choose g for Gabriel Pereira or m for Mousinho da Silveira";
-        cin >> input;
-    }
-    else{
+    if(input == 'g' || input == 'm'){
         basic_string<char> tempInput;
         tempInput = input;
         int limit;
@@ -58,8 +54,12 @@ double getMostProbableSchool(){
             }
         }
 
-    probability = counter/dataMoveR.get_schoolVec().size();
-    cout << "probability of a student drinking at school " << input << " is: " << probability;
+        probability = counter/dataMoveR.get_schoolVec().size();
+        cout << "probability of a student drinking at school " << input << " is: " << probability;
+    }
+    else{
+        cout << "try again choose g for Gabriel Pereira or m for Mousinho da Silveira";
+        cin >> input;
     }
     return probability;
 }
@@ -68,11 +68,7 @@ double getProbGender(){
     double probability = 0.00;
     char input;
     cin >> input;
-    if(input != 'm' || input != 'f'){
-        cout << "try again choose f for female or m for male";
-        cin >> input;
-    }
-    else{
+    if(input == 'm' || input == 'f'){
         basic_string<char> tempInput;
         tempInput = input;
         int counter = 0;
@@ -85,6 +81,10 @@ double getProbGender(){
         cout << "probability of a student drinking of sex " << input << " is: " << probability;
 
     }
+    else{
+        cout << "try again choose f for female or m for male";
+        cin >> input;
+    }
     return probability;
 }
 
@@ -93,11 +93,7 @@ double getProbOfHomeType(){
     cout << "choose u for urban and r for rural";
     char input;
     cin >> input;
-    if(input != 'u' || input != 'r'){
-        cout << "try again choose u for urban and r for rural";
-        cin >> input;
-    }
-    else{
+    if(input == 'u' || input == 'r'){
         basic_string<char> tempInput;
         tempInput = input;
         int counter = 0;
@@ -109,6 +105,10 @@ double getProbOfHomeType(){
 
         probability = counter/dataMoveR.get_addressVec().size();
         cout << "probability of a student drinking of home type " << input << " is: " << probability;
+    }
+    else{
+        cout << "try again choose u for urban and r for rural";
+        cin >> input;
     }
     return probability;
 }
@@ -137,6 +137,6 @@ void getMostFreqAgeOfDrinker(){
 
 }
 //concludes whats written on 11/8
-
+//logial operations chage on 11/12
 
 
