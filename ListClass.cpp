@@ -10,6 +10,10 @@
 ListClass::ListClass() {
 }
 
+//object to call functions in other files
+
+ListClass dataMoveR;
+
 std::vector <std::string> ListClass::get_schoolVec() {
     return schoolVec;
 }
