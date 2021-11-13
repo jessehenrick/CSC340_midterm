@@ -37,7 +37,7 @@ double probOfAge(int age){
     return probability;
 }
 
-double getMostProbableSchool(){
+double getProbabilityOfSchool(char school){
     double probability = 0.00;
     cout << "choose g for Gabriel Pereira or m for Mousinho da Silveira";
     char input;
@@ -64,7 +64,7 @@ double getMostProbableSchool(){
     return probability;
 }
 
-double getProbGender(){
+double getProbGender(char gender){
     double probability = 0.00;
     char input;
     cin >> input;
@@ -88,7 +88,7 @@ double getProbGender(){
     return probability;
 }
 
-double getProbOfHomeType(){
+double getProbOfHomeType(char homeType){
     double probability = 0.00;
     cout << "choose u for urban and r for rural";
     char input;
@@ -137,6 +137,43 @@ void getMostFreqAgeOfDrinker(){
 
 }
 //concludes whats written on 11/8
-//logial operations chage on 11/12
+//logial operations change on 11/12
+//start of more complex algorithms
 
+//probability * probability = probability of dependent event
+void getProbabilityOfSchoolAndGender(){
+    double tempProb1 = getProbabilityOfSchool('g');
+    double tempProb2 = getProbabilityOfSchool('m');
+    double tempProb3 = getProbGender('m');
+    double tempProb4 = getProbGender('f');
+    cout << "Choose both a gender and a school m for male and f for female and for school choose g for Gabriel Pereira or m for Mousinho da Silveira";
+    //choose gender
+    char choiceA;
+    cin >> choiceA;
+    //choose school
+    basic_string<char> choiceB;
+    cin >> choiceB;
+    //if branches to determine what probabilities should be multiplied
+    double newProbability = 0.00;
+    //probability of student being male and goes to gabriel pereira
+    if(choiceA == 'm' && choiceB == "g"){
+        newProbability = tempProb3 * tempProb1;
+        cout << "the probability of a student being male and going to gabriel pereira is:" << newProbability;
+    }
+    //probability of student being male and going to mousinho da silveira
+    else if(choiceA == 'm' && choiceB == "m"){
+        newProbability = tempProb3 * tempProb2;
+        cout << "the probability of a student being male and going to mousinho da silveira is:" << newProbability;
+    }
+    //probability of student being female and going to gabriel pereira
+    else if(choiceA == 'f' && choiceB == "g"){
+        newProbability = tempProb4 * tempProb1;
+        cout << "the probability of a student being female and going to gabriel pereira is:" << newProbability;
+    }
+    else if(choiceA == 'f' && choiceB == "m"){
+        newProbability = tempProb4 * tempProb2;
+        cout << "the probability of a student being female and going to mousinho da silveira is:" << newProbability;
+    }
+
+}
 

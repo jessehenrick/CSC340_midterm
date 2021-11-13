@@ -7,6 +7,12 @@
 
 
 class Student {
+    double ProbOfAge(int age);
+    double getProbabilityOfSchool(char school);
+    double getProbGender(char gender);
+    double getProbOfHomeType(char homeType);
+    void getMostFreqAgeOfDrinker();
+    void getProbabilityOfSchoolAndGender();
 };
 
 
