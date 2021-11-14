@@ -4,10 +4,6 @@
 
 #include "Student.h"
 
-#include <utility>
-#include <ios>
-
-
 Student::Student(string setSubject,
                  string setSchool,
                  char setSex,
@@ -367,6 +363,7 @@ ostream &Student::operator<<(ostream &out) {
     return out;
 
 }
+
 
 // string subject, string school, char sex, int age, char address, string famsize,char Pstatus, int Medu, int Fedu,
 // string Mjob, \n string Fjob, string reason, string guardian, int traveltime, int studytime, int failures,
