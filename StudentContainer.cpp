@@ -169,9 +169,6 @@ bool StudentContainer::verifyCSVHeader(const string &lineToParse) {
     if (tempString != "G3") {
         return false;
     }
-
-
-
     return correctData;
 }
 
@@ -179,6 +176,7 @@ bool StudentContainer::verifyCSVHeader(const string &lineToParse) {
 
 bool StudentContainer::parseLine(const string& lineToParse) {
     bool success = true;
+    stringstream lineStream(lineToParse);
 
 
 

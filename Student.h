@@ -6,8 +6,12 @@
 #define CSC340_MIDTERM_STUDENT_H
 
 #include <string>
+#include <iostream>
 
 using std::string;
+using std::ostream;
+using std::to_string;
+using std::boolalpha;
 
 class Student {
 private:
@@ -122,13 +126,93 @@ public:
 
 
     // getters
-
-
+    string getSubject();
+    string getSchool();
+    char getSex();
+    int getAge();
+    char getAddress();
+    string getFamsize();
+    char getPstatus();
+    int getMedu();
+    int getFedu();
+    string getMjob();
+    string getFjob();
+    string getReason();
+    string getGuardian();
+    int getTraveltime();
+    int getStudyTime();
+    int getFailures();
+    bool getSchoolsup();
+    bool getFamsup();
+    bool getPaid();
+    bool getActivities();
+    bool getNursery();
+    bool getHigher();
+    bool getInternet();
+    bool getRomantic();
+    int getFamrel();
+    int getFreetime();
+    int getGoout();
+    int getDalc();
+    int getWalc();
+    int getHealth();
+    int getAbsences();
+    int getG1();
+    int getG2();
+    int getG3();
 
     // setters
 
+    void setSubject(const string& setSubject);
+    void setSchool(const string& setSchool);
+    void setSex(char setSex);
+    void setAge(int setAge);
+    void setAddress(char setAddress);
+    void setFamsize(const string& setFamsize);
+    void setPstatus(char setPstatus);
+    void setMedu(int setMedu);
+    void setFedu(int setFedu);
+    void setMjob(const string& setMjob);
+    void setFjob(const string& setFjob);
+    void setReason(const string& setReason);
+    void setGuardian(const string& setGuardian);
+    void setTraveltime(int setTraveltime);
+    void setStudytime(int setStudytime);
+    void setFailures(int setFailures);
+    void setSchoolsup(bool setSchoolsup);
+    void setFamsup(bool setFamsup);
+    void setPaid(bool setPaid);
+    void setActivities(bool setActivities);
+    void setNursery(bool setNursery);
+    void setHigher(bool setHigher);
+    void setInternet(bool setInternet);
+    void setRomantic(bool setRomantic);
+    void setFamrel(int setFamrel);
+    void setFreetime(int setFreetime);
+    void setGoout(int setGoout);
+    void setDalc(int setDalc);
+    void setWalc(int setWalc);
+    void setHealth(int setHealth);
+    void setAbsences(int setAbsences);
+    void setG1(int setG1);
+    void setG2(int setG2);
+    void setG3(int setG3);
+
+
+    // overloads
+
+    ostream& operator << (ostream& out);
+
+
+    // member functions
+
+
 
 };
+// string subject, string school, char sex, int age, char address, string famsize,char Pstatus, int Medu, int Fedu,
+// string Mjob, string Fjob, string reason, string guardian, int traveltime, int studytime, int failures,
+// bool schoolsup, bool famsup, bool paid, bool activities, bool nursery, bool higher, bool internet, bool romantic,
+// int famrel, int freetime,int goout, int Dalc, int Walc, int health, int absences, int G1, int G2, int G3
 
 
 #endif //CSC340_MIDTERM_STUDENT_H
