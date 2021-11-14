@@ -7,44 +7,49 @@
 #include "Student.h"
 using namespace std;
 
-int showMenu(double size,vector<double> sett){
+int showMenu(double size,vector<double> sett, vector<string> setvect2, vector<string> vectsex, vector<string> vecthome){
     char userInput;
 
    Student dataMover;
 
     while(true){
-        cout<<endl<<endl<<"*MENU*\n\n1- Probability Of Male Drinkers\n2- Probability Of Female Drinkers\n3- Probability Of Age Chosen To Be Underaged Drinking (15-19)\n4- School With The Higher Rate of Underage Drinking\n5- Most Frequent Age of Drinker Between Both Schools \n6- Profile of the student most likely to drink\n7- Most Probable Home Type To Drink\nq- Quit"<<endl<<endl;
+        cout<<endl<<endl<<"*MENU*\n\n1- TBD\n2- Probability Of Drinker's Gender Chosen\n3- Probability Of Age Chosen To Be Underaged Drinking (15-19)\n4- School With The Higher Rate of Underage Drinking\n5- TBD \n6- Probability of school and gender as a dependent event\n7- Most Probable Home Type To Drink\nq- Quit"<<endl<<endl;
         cin>>userInput;
         switch(userInput){
             case '1':
-
-
+//TBD
                 cout<<"option 1"<<endl;
-                dataMover.getProbGender();
                 break;
-
+//prob of a gender chosen
             case '2':
                 cout<<"option 2"<<endl;
-                dataMover.getProbGender();
+                dataMover.getProbGender( size, vectsex);
                 break;
-
+//prob of chosen age between both schools
             case '3':
                 cout<<"option 3"<<endl;
                 dataMover.ProbOfAge(size,sett);
                 break;
-
+//prob of school chosen between all students
             case '4':
                 cout<<"option 4"<<endl;
+                dataMover.getProbabilityOfSchool(size, setvect2);
                 break;
+//TBD (possibly complex algo 2)
             case '5':
                 cout<<"option 5"<<endl;
                 break;
+//probability of a dependent event
             case '6':
                 cout<<"option 6"<<endl;
+                dataMover.getProbabilityOfSchoolAndGender(size, vectsex, setvect2);
                 break;
+//prob of home type chosen
             case '7':
                 cout<<"option 7"<<endl;
+                dataMover.getProbOfHomeType(size,vecthome);
                 break;
+//quit
             case 'q':
                 cout<<"Quitting..."<<endl;
                 return 0;
@@ -127,15 +132,18 @@ int main() {
     Student seter;
     //I used the file path in my PC bc it works, but idk if it'll work on other devices, so i guess this
     // has to be changed on future implementations.
-    getFileData("C:/Users/Joseph Gorny/Documents/Midterm Project/student_data/student-mat.csv",listClass);
-    getFileData("C:/Users/Joseph Gorny/Documents/Midterm Project/student_data/student-por.csv",listClass);
+    getFileData("D:/cLION/programs/group project 2/student_data/student-mat.csv",listClass);
+    getFileData("D:/cLION/programs/group project 2/student_data/student-por.csv",listClass);
 
     double setSize = listClass.getsizeofage();
 
     vector<double> setvect = listClass.get_ageVec();
+    vector<string> setvect2 = listClass.get_schoolVec();
+    vector<string> vectsex = listClass.get_sexVec();
+    vector<string> vecthome = listClass.get_addressVec();
     listClass.printData();
     seter.setsizeofvect(setSize);
-    showMenu(setSize,setvect);
+    showMenu(setSize,setvect,setvect2,vectsex, vecthome);
 
     return 0;
 }
