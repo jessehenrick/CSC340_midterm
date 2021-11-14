@@ -1,6 +1,7 @@
 //
 // Created by jesse on 11/5/2021.
 //
+using namespace std;
 
 #ifndef CSC340_MIDTERM_LISTCLASS_H
 #define CSC340_MIDTERM_LISTCLASS_H
@@ -9,24 +10,26 @@
 class ListClass {
 public:
     ListClass();
-    std::vector <std::string> get_schoolVec();
-    std::vector <std::string> get_sexVec();
-    std::vector <int> get_ageVec();
-    std::vector <std::string> get_addressVec();
-    std::vector <std::string> get_famSizeVec();
-    void addtoSchoolVec(std::string data);
-    void addtoSexVec(std::string data);
-    void addtoAddressVec(std::string data);
+    vector <string> get_schoolVec();
+    vector <string> get_sexVec();
+    vector <double> get_ageVec();
+    vector <string> get_addressVec();
+    vector <std::string> get_famSizeVec();
+    void addtoSchoolVec(string data);
+    void addtoSexVec(string data);
+    void addtoAddressVec(string data);
     void addtoFamSizeVec(std::string data);
     void addtoAgeVec(int data);
     void printData();
+    int getsizeofage();
 
 private:
-    std::vector <std::string> schoolVec;
-    std::vector <std::string> sexVec;
-    std::vector <int> ageVec;
-    std::vector <std::string> addressVec;
+    vector <std::string> schoolVec;
+    vector <std::string> sexVec;
+    vector <double> ageVec;
+    vector <std::string> addressVec;
     std::vector <std::string> famSizeVec;
+
 };
 
 

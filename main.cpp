@@ -4,24 +4,35 @@
 #include <sstream>
 #include <vector>
 #include "ListClass.h"
-
+#include "Student.h"
 using namespace std;
 
-int showMenu(){
+int showMenu(double size,vector<double> sett){
     char userInput;
+
+   Student dataMover;
+
     while(true){
         cout<<endl<<endl<<"*MENU*\n\n1- Probability Of Male Drinkers\n2- Probability Of Female Drinkers\n3- Probability Of Age Chosen To Be Underaged Drinking (15-19)\n4- School With The Higher Rate of Underage Drinking\n5- Most Frequent Age of Drinker Between Both Schools \n6- Profile of the student most likely to drink\n7- Most Probable Home Type To Drink\nq- Quit"<<endl<<endl;
         cin>>userInput;
         switch(userInput){
             case '1':
+
+
                 cout<<"option 1"<<endl;
+                dataMover.getProbGender();
                 break;
+
             case '2':
                 cout<<"option 2"<<endl;
+                dataMover.getProbGender();
                 break;
+
             case '3':
                 cout<<"option 3"<<endl;
+                dataMover.ProbOfAge(size,sett);
                 break;
+
             case '4':
                 cout<<"option 4"<<endl;
                 break;
@@ -62,6 +73,7 @@ int printIntVector(vector <int> &vec){
 
 int getFileData(string fd, ListClass &list){
     //inserts data into ListClass instance
+
     ifstream inputFile;
     inputFile.open(fd);
     if (!inputFile.is_open()) {
@@ -101,6 +113,7 @@ int getFileData(string fd, ListClass &list){
 
         }
         cout << "Vectors successfully populated with " << list.get_schoolVec().size() << " data points." << endl;
+        cout << list.getsizeofage()<<"this is the size of the vector"<<endl;
 
 
         return 0;
@@ -111,15 +124,18 @@ int main() {
 
 
     ListClass listClass;
-
+    Student seter;
     //I used the file path in my PC bc it works, but idk if it'll work on other devices, so i guess this
     // has to be changed on future implementations.
-    getFileData("C:/Users/pablo/CLionProjects/CSC340_midterm/student_data/student-mat.csv",listClass);
-    getFileData("C:/Users/pablo/CLionProjects/CSC340_midterm/student_data/student-por.csv",listClass);
+    getFileData("C:/Users/Joseph Gorny/Documents/Midterm Project/student_data/student-mat.csv",listClass);
+    getFileData("C:/Users/Joseph Gorny/Documents/Midterm Project/student_data/student-por.csv",listClass);
 
+    double setSize = listClass.getsizeofage();
+
+    vector<double> setvect = listClass.get_ageVec();
     listClass.printData();
-
-    showMenu();
+    seter.setsizeofvect(setSize);
+    showMenu(setSize,setvect);
 
     return 0;
 }

@@ -7,12 +7,18 @@
 
 
 class Student {
-    double ProbOfAge(int age);
-    double getProbabilityOfSchool(char school);
-    double getProbGender(char gender);
-    double getProbOfHomeType(char homeType);
+public:
+    Student();
+    double ProbOfAge(double size,std::vector<double> sett);
+    double getProbabilityOfSchool();
+    double getProbGender();
+    double getProbOfHomeType();
     void getMostFreqAgeOfDrinker();
     void getProbabilityOfSchoolAndGender();
+    void setsizeofvect(double size);
+
+private:
+    int sizeofvect;
 };
 
 
