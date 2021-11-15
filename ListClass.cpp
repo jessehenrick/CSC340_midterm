@@ -26,10 +26,11 @@ std::vector<double> ListClass::get_ageVec() {
 std::vector <std::string> ListClass::get_addressVec() {
     return addressVec;
 }
+/*
 std::vector <std::string> ListClass::get_famSizeVec() {
     return famSizeVec;
 }
-
+*/
 void ListClass::addtoSchoolVec(std::string data){
     schoolVec.push_back(data);
 }
@@ -39,10 +40,11 @@ void ListClass::addtoSexVec(std::string data){
 void ListClass::addtoAddressVec(std::string data){
     addressVec.push_back(data);
 }
+/*
 void ListClass::addtoFamSizeVec(std::string data){
     famSizeVec.push_back(data);
 }
-
+*/
 void ListClass::addtoAgeVec(int data){
     ageVec.push_back(data);
 }

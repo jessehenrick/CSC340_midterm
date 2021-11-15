@@ -31,11 +31,12 @@ double Student::ProbOfAge(double size,vector<double> sett){
     cout << "choose from the age of 15 to 19";
     int input = 0;
     cin >> input;
-    if(input < 14 || input > 19){
-        cout << "try again select an age from 15 to 19";
-        ProbOfAge(size,sett);
+    while(input < 14 || input > 19){
+        cout << "try again select an age from 15 to 19" << endl;
+        input = 0;
+        cin >> input;
+
     }
-    else{
         double limit = size;
         double counter = 0;
         vector<double> limitvec = sett;
@@ -47,7 +48,6 @@ double Student::ProbOfAge(double size,vector<double> sett){
         }
 
         probability = (counter/ size) * 100.0;
-    }
 
 
     cout << "probability of a student drinking at age " << input << " is: " << probability<<"% "<<endl;
@@ -60,6 +60,11 @@ double Student::getProbabilityOfSchool(double size, vector<string> setvect2){
     string input;
     cin.ignore();
     getline(cin, input);
+    while(input != "MS" && input != "GP") {
+        input = "";
+        std::cout << "Invalid input; please re-enter.\n";
+        getline(cin, input);
+    }
     if(input == "GP" || input == "MS"){
         basic_string<char> tempInput;
         tempInput = input;
@@ -75,11 +80,6 @@ double Student::getProbabilityOfSchool(double size, vector<string> setvect2){
         probability = (counter/size) * 100;
         cout << "probability of a student drinking at school " << input << " is: " << probability << "%" << endl;
     }
-    else{
-        cout << "try again choose g for Gabriel Pereira or m for Mousinho da Silveira";
-        //cin >> input;
-        getProbabilityOfSchool(size,setvect2);
-    }
     return probability;
 }
 
@@ -88,6 +88,11 @@ double Student::getProbGender(double size,vector<string> vectsex){
     char input;
     cout << "choose M for Male or F for Female";
     cin >> input;
+    while(input != 'M' && input != 'F') {
+        input = ' ';
+        std::cout << "Invalid input; please re-enter.\n";
+        cin >> input;
+    }
     if(input == 'M' || input == 'F'){
         basic_string<char> tempInput;
         tempInput = input;
@@ -101,18 +106,19 @@ double Student::getProbGender(double size,vector<string> vectsex){
         cout << "probability of a student drinking of sex from both schools " << input << " is: " << probability<<"%"<<endl;
 
     }
-    else{
-        cout << "try again choose f for female or m for male";
-        getProbGender( size, vectsex);
-    }
     return probability;
 }
 
 double Student::getProbOfHomeType(double size, vector<string>vecthome){
     double probability = 0.00;
-    cout << "choose U for urban and R for rural";
+    cout << "\nchoose U for urban and R for rural";
     char input;
     cin >> input;
+    while(input != 'U' && input != 'R') {
+        input = ' ';
+        std::cout << "Invalid input; please re-enter.\n";
+        cin >> input;
+    }
     if(input == 'U' || input == 'R'){
         basic_string<char> tempInput;
         tempInput = input;
@@ -124,10 +130,6 @@ double Student::getProbOfHomeType(double size, vector<string>vecthome){
         }
         probability = (counter/size) * 100;
         cout << "probability of a student drinking of home type " << input << " is: " << probability << "%" << endl;
-    }
-    else{
-        cout << "try again choose u for urban and r for rural";
-        getProbOfHomeType( size, vecthome);
     }
     return probability;
 }
@@ -179,37 +181,50 @@ void Student::getProbabilityOfSchoolAndGender(double size, vector<string> setvec
     //choose gender
     cin.ignore(1024,'\n');
     cout << "Choose a Gender M for male F for Female";
-    string choiceA;
-    getline(cin, choiceA);
-    cout << "press enter again" << endl;
+    char choiceA;
+    cin >> choiceA;
+    //cout << "press enter again" << endl;
+    //cin.ignore(1024,'\n');
+    //choose school
+    while(choiceA != 'M' && choiceA != 'F') {
+        choiceA = ' ';
+        std::cout << "Invalid input; please re-enter.\n";
+        cin >> choiceA;
+    }
     cin.ignore(1024,'\n');
     //choose school
     cout << "Choose a School GP for gabriel pereira and MS for mousinho da silveira";
     string choiceB;
     getline(cin, choiceB);
-    //if branches to determine what probabilities should be multiplied
-    double newProbability = 0.00;
-    //probability of student being male and goes to gabriel pereira
-    if(choiceA == "M" && choiceB == "GP"){
-        //cout << "entered if else 1";
-        newProbability = tempProb3 * tempProb1;
-        cout << "the probability of a student being male and going to gabriel pereira is:" << newProbability;
+    while(choiceB != "GP" && choiceB != "MS") {
+        choiceB = " ";
+        std::cout << "Invalid input; please re-enter.\n";
+        cin >> choiceB;
     }
-        //probability of student being male and going to mousinho da silveira
-    else if(choiceA == "M" && choiceB == "MS"){
-        //cout << "entered if else 2";
-        newProbability = tempProb3 * tempProb2;
-        cout << "the probability of a student being male and going to mousinho da silveira is:" << newProbability;
-    }
-        //probability of student being female and going to gabriel pereira
-    else if(choiceA == "F" && choiceB == "GP"){
-        //cout << "entered if else 3";
-        newProbability = tempProb4 * tempProb1;
-        cout << "the probability of a student being female and going to gabriel pereira is:" << newProbability;
-    }
-    else if(choiceA == "F" && choiceB == "MS"){
-        //cout << "entered if else 4";
-        newProbability = tempProb4 * tempProb2;
-        cout << "the probability of a student being female and going to mousinho da silveira is:" << newProbability;
-    }
+        double newProbability = 0.00;
+        //probability of student being male and goes to gabriel pereira
+        if(choiceA == 'M' && choiceB == "GP"){
+            //cout << "entered if else 1";
+            newProbability = (tempProb3 * tempProb1) * 100;
+            cout << "the probability of a student being male and going to gabriel pereira is:" << newProbability << "%" << endl;
+        }
+            //probability of student being male and going to mousinho da silveira
+        if(choiceA == 'M' && choiceB == "MS"){
+            //cout << "entered if else 2";
+            newProbability = (tempProb3 * tempProb2) * 100;
+            cout << "the probability of a student being male and going to mousinho da silveira is:" << newProbability << "%" << endl;
+        }
+            //probability of student being female and going to gabriel pereira
+        else if(choiceA == 'F' && choiceB == "GP"){
+            //cout << "entered if else 3";
+            newProbability = (tempProb4 * tempProb1) * 100;
+            cout << "the probability of a student being female and going to gabriel pereira is:" << newProbability << "%" << endl;
+        }
+        else if(choiceA == 'F' && choiceB == "MS"){
+            //cout << "entered if else 4";
+            newProbability = (tempProb4 * tempProb2) * 100;
+            cout << "the probability of a student being female and going to mousinho da silveira is:" << newProbability << "%" << endl;
+        }
+
 }
+

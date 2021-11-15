@@ -13,7 +13,7 @@ int showMenu(double size,vector<double> sett, vector<string> setvect2, vector<st
    Student dataMover;
 
     while(true){
-        cout<<endl<<endl<<"*MENU*\n\n1- TBD\n2- Probability Of Drinker's Gender Chosen\n3- Probability Of Age Chosen To Be Underaged Drinking (15-19)\n4- School With The Higher Rate of Underage Drinking\n5- TBD \n6- Probability of school and gender as a dependent event\n7- Most Probable Home Type To Drink\nq- Quit"<<endl<<endl;
+        cout<<endl<<endl<<"*MENU*\n\n1- TBD\n2- Probability Of Drinker's Gender Chosen\n3- Probability Of Age Chosen To Be Underaged Drinking (15-19)\n4- Proability of underage drinkers at a certian school\n5- TBD \n6- Probability of school and gender as a dependent event\n7- Most Probable Home Type To Drink\nq- Quit"<<endl<<endl;
         cin>>userInput;
         switch(userInput){
             case '1':
@@ -110,8 +110,8 @@ int getFileData(string fd, ListClass &list){
             list.addtoAddressVec(buffer);
 
             //storing in famSizeVec
-            getline(ss, buffer, ',');
-            list.addtoFamSizeVec(buffer);
+            //getline(ss, buffer, ',');
+            //list.addtoFamSizeVec(buffer);
 
 
             getline(inputFile, line);

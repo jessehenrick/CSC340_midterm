@@ -18,7 +18,7 @@ public:
     void addtoSchoolVec(string data);
     void addtoSexVec(string data);
     void addtoAddressVec(string data);
-    void addtoFamSizeVec(std::string data);
+    //void addtoFamSizeVec(std::string data);
     void addtoAgeVec(int data);
     void printData();
     int getsizeofage();
@@ -28,7 +28,7 @@ private:
     vector <std::string> sexVec;
     vector <double> ageVec;
     vector <std::string> addressVec;
-    std::vector <std::string> famSizeVec;
+    //std::vector <std::string> famSizeVec;
 
 };
 
