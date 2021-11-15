@@ -13,12 +13,13 @@ int showMenu(double size,vector<double> sett, vector<string> setvect2, vector<st
    Student dataMover;
 
     while(true){
-        cout<<endl<<endl<<"*MENU*\n\n1- TBD\n2- Probability Of Drinker's Gender Chosen\n3- Probability Of Age Chosen To Be Underaged Drinking (15-19)\n4- Proability of underage drinkers at a certian school\n5- TBD \n6- Probability of school and gender as a dependent event\n7- Most Probable Home Type To Drink\nq- Quit"<<endl<<endl;
+        cout<<endl<<endl<<"*MENU*\n\n1- Student Profile\n2- Probability Of Drinker's Gender Chosen\n3- Probability Of Age Chosen To Be Underaged Drinking (15-19)\n4- Proability of underage drinkers at a certian school \n5- Probability of school and gender as a dependent event\n6- Most Probable Home Type To Drink\nq- Quit"<<endl<<endl;
         cin>>userInput;
         switch(userInput){
             case '1':
-//TBD
+//profile
                 cout<<"option 1"<<endl;
+                dataMover.MakeProfile(size, sett, vectsex, setvect2,vecthome);
                 break;
 //prob of a gender chosen
             case '2':
@@ -35,18 +36,14 @@ int showMenu(double size,vector<double> sett, vector<string> setvect2, vector<st
                 cout<<"option 4"<<endl;
                 dataMover.getProbabilityOfSchool(size, setvect2);
                 break;
-//TBD (possibly complex algo 2)
+//probability of a dependent event
             case '5':
                 cout<<"option 5"<<endl;
-                break;
-//probability of a dependent event
-            case '6':
-                cout<<"option 6"<<endl;
                 dataMover.getProbabilityOfSchoolAndGender(size, vectsex, setvect2);
                 break;
 //prob of home type chosen
-            case '7':
-                cout<<"option 7"<<endl;
+            case '6':
+                cout<<"option 6"<<endl;
                 dataMover.getProbOfHomeType(size,vecthome);
                 break;
 //quit
@@ -130,17 +127,21 @@ int main() {
 
     ListClass listClass;
     Student seter;
+    //WARING PLEASE CHANGE FILE PATH TO INCLUDED DATA WITH THE PROJECT RATHER THAN DATA DIRECTLY FROM KAGGLE
+    //we shortned the data list to make the computation just a little bit faster
     //I used the file path in my PC bc it works, but idk if it'll work on other devices, so i guess this
-    // has to be changed on future implementations.
+    // has to be changed per computer.
     getFileData("D:/cLION/programs/group project 2/student_data/student-mat.csv",listClass);
     getFileData("D:/cLION/programs/group project 2/student_data/student-por.csv",listClass);
 
     double setSize = listClass.getsizeofage();
-
+    //move file input data into vectors we can use
     vector<double> setvect = listClass.get_ageVec();
     vector<string> setvect2 = listClass.get_schoolVec();
     vector<string> vectsex = listClass.get_sexVec();
     vector<string> vecthome = listClass.get_addressVec();
+
+    //print all taken in data
     listClass.printData();
     seter.setsizeofvect(setSize);
     showMenu(setSize,setvect,setvect2,vectsex, vecthome);
