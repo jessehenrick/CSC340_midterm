@@ -31,8 +31,8 @@ double Student::ProbOfAge(double size,vector<double> sett){
     cout << "Choose from the age between 15 - 19."<<endl<<"Write down your option here:";
     int input = 0;
     cin >> input;
-    while(input < 14 || input > 19){
-        cout << "\\nTry again and select an age between 15 - 19." << endl<<"Write down your option here:" << endl;
+    while(input < 15 || input > 19){
+        cout << "\nTry again and select an age between 15 - 19." << endl<<"Write down your option here:" << endl;
         input = 0;
         cin >> input;
 
@@ -86,7 +86,7 @@ double Student::getProbabilityOfSchool(double size, vector<string> setvect2){
 double Student::getProbGender(double size,vector<string> vectsex){
     double probability = 0.00;
     char input;
-    cout << "Choose [M] for Male or [F] for Female.\nWrite down your option here:";
+    cout << "Choose a gender from the data:\nChoose [M] for Male or [F] for Female.\nWrite down your option here:";
     cin >> input;
     while(input != 'M' && input != 'F') {
         input = ' ';
@@ -220,7 +220,7 @@ void Student::getProbabilityOfSchoolAndGender(double size, vector<string> setvec
 
     //choose gender
     cin.ignore(1024,'\n');
-    cout << "Choose a Gender." << endl << "[M] for Male or [F] for Female"<<endl<<"Write down your option here:";
+    cout << "Choose a gender from the dataset." << endl << "[M] for Male or [F] for Female"<<endl<<"Write down your option here:";
     char choiceA;
     cin >> choiceA;
     //cout << "press enter again" << endl;
@@ -228,20 +228,18 @@ void Student::getProbabilityOfSchoolAndGender(double size, vector<string> setvec
     //choose school
     while(choiceA != 'M' && choiceA != 'F') {
         choiceA = ' ';
-        std::cout << "Invalid input; please re-enter.\n";
-        cout << "Choose a Gender." << endl << "[M] for Male or [F] for Female"<<endl<<"Write down your option here:\n";
+        std::cout << "\nInvalid input; please re-enter.\n";
+        cout << "Choose a gender from the dataset." << endl << "[M] for Male or [F] for Female"<<endl<<"Write down your option here:";
         cin >> choiceA;
     }
     cin.ignore(1024,'\n');
     //choose school
-    cout << "Choose a School:" << endl;
-    cout<< "[GP] for Gabriel Pereira or [MS] for Mousinho da Silveira"<<endl;
-    cout <<"Write down your option here:";
+    cout << "\nChoose a School:\n[GP] for Gabriel Pereira or [MS] for Mousinho da Silveira\nWrite down your option here:";
     string choiceB;
     getline(cin, choiceB);
     while(choiceB != "GP" && choiceB != "MS") {
         choiceB = " ";
-        std::cout << "Invalid input; please re-enter.\n";
+        std::cout << "\nInvalid input; please re-enter.\nChoose a School:\n[GP] for Gabriel Pereira or [MS] for Mousinho da Silveira\nWrite down your option here:";
         cin >> choiceB;
     }
         double newProbability = 0.00;
@@ -287,15 +285,15 @@ void Student::MakeProfile(double size, vector<double> sett, vector<string> setve
     double probOf18 = getprobofAgeSet(18, size, sett);
     double probOf19 = getprobofAgeSet(19, size, sett);
     //ask user if they want to see the highest probable traits of a student to drink or the lowest
-    cout << "Please enter H to create a profile for a student with most determining drinking factors, or L for \nleast determining factors" << endl;
+    cout << "Please enter [H] to create a profile for a student with most determining drinking\nfactors, or [L] for least determining factors.\nWrite down your option here:";
     char choiceA;
     cin >> choiceA;
     while(choiceA != 'H' && choiceA != 'L') {
         choiceA = ' ';
-        std::cout << "Invalid input; please re-enter. Choices are H for highest or L for lowest: \n";
+        std::cout << "\nInvalid input; please re-enter.\nPlease enter [H] to create a profile for a student with most determining drinking\nfactors, or [L] for least determining factors.\nWrite down your option here:\n";
         cin >> choiceA;
     }
-    string profile = "Student profile most likely to drink contains the following determining factors: ";
+    string profile = "\nThe student profile most likely to drink contains the following determining factors: ";
     //compare each probability to find lowest and highest of each category
     if(choiceA == 'H') {
         if(probOfGP > probOfMS) {
@@ -309,9 +307,9 @@ void Student::MakeProfile(double size, vector<double> sett, vector<string> setve
             profile = profile + "\nGender: Female";
         }
         if(probOfR > probOfU) {
-            profile = profile + "\nHometype: Rural";
+            profile = profile + "\nHome-type: Rural";
         } else {
-            profile = profile + "\nHometype: Urban";
+            profile = profile + "\nHome-type: Urban";
         }
         if(probOf15 > probOf16 && probOf15 > probOf17 && probOf15 > probOf18 && probOf15 > probOf19) {
             profile = profile + "\nAge: 15";
@@ -336,9 +334,9 @@ void Student::MakeProfile(double size, vector<double> sett, vector<string> setve
             profile = profile + "\nGender: Female";
         }
         if(probOfR < probOfU) {
-            profile = profile + "\nHometype: Rural";
+            profile = profile + "\nHome-type: Rural";
         } else {
-            profile = profile + "\nHometype: Urban";
+            profile = profile + "\nHome-type: Urban";
         }
         if(probOf15 < probOf16 && probOf15 < probOf17 && probOf15 < probOf18 && probOf15 < probOf19) {
             profile = profile + "\nAge: 15";
@@ -352,7 +350,7 @@ void Student::MakeProfile(double size, vector<double> sett, vector<string> setve
             profile = profile + "\nAge: 19";
         }
     }
-    cout << profile << endl;
+    cout<< profile  <<"\n\nReturning to Menu...";
 }
 
 
