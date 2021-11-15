@@ -7,11 +7,16 @@
 
 #include <vector>
 #include <sstream>
+#include <fstream>
+#include <iostream>
 #include "Student.h"
 
 using std::vector;
 using std::move;
 using std::stringstream;
+using std::ifstream;
+using std::cerr;
+using std::endl;
 
 
 class StudentContainer {
@@ -38,7 +43,7 @@ public:
     // member functions
 
     static bool verifyCSVHeader(const string& lineToParse);
-    bool parseLine(const string& lineToParse);
+    static Student parseLine(const string& lineToParse, const string& classTitle);
     bool readFileCSV(const string& filePath, const string& classTitle);
 
 
