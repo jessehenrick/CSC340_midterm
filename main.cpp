@@ -131,6 +131,7 @@ void printMenuOptions() {
                             "\t6: exit" << endl << ">";
 }
 
+
 /*
  * auto start = std::chrono::steady_clock::now();
  * * * * * * * * * * * * * * * * * * * * * * * * *

@@ -216,6 +216,7 @@ public:
 
 
 };
+
 // string subject, string school, char sex, int age, char address, string famsize,char Pstatus, int Medu, int Fedu,
 // string Mjob, string Fjob, string reason, string guardian, int traveltime, int studytime, int failures,
 // bool schoolsup, bool famsup, bool paid, bool activities, bool nursery, bool higher, bool internet, bool romantic,
