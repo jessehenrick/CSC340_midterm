@@ -175,8 +175,6 @@ bool StudentContainer::verifyCSVHeader(const string &lineToParse) {
     return correctData;
 }
 
-
-
 Student StudentContainer::parseLine(const string& lineToParse, const string& classTitle) {
     Student newStudent;
     string tempString;
@@ -273,7 +271,7 @@ bool StudentContainer::readFileCSV(const string& filePath, const string& classTi
     return true;
 }
 
-void StudentContainer::printAgeMakeupWithAverageDalcWalc() {
+void StudentContainer::printAgeMakeupWithStats() {
     StudentContainer studentsWhoAre15;
     StudentContainer studentsWhoAre16;
     StudentContainer studentsWhoAre17;
@@ -310,73 +308,45 @@ void StudentContainer::printAgeMakeupWithAverageDalcWalc() {
                 break;
         }
     }
-    double tempAverage;
-    cout << std::setprecision(2);
     cout << "--" << endl;
     cout << "Number of students who are 15: " << studentsWhoAre15.getStudentsSize() << endl;
-    cout << "Average weekday alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre15.getAverageDalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
-    cout << "Average weekend alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre15.getAverageWalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    studentsWhoAre15.printDalcStats();
+    studentsWhoAre15.printWalcStats();
+
     cout << "--" << endl;
     cout << "Number of students who are 16: " << studentsWhoAre16.getStudentsSize() << endl;
-    cout << "Average weekday alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre16.getAverageDalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
-    cout << "Average weekend alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre16.getAverageWalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    studentsWhoAre16.printDalcStats();
+    studentsWhoAre16.printWalcStats();
+
     cout << "--" << endl;
     cout << "Number of students who are 17: " << studentsWhoAre17.getStudentsSize() << endl;
-    cout << "Average weekday alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre17.getAverageDalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
-    cout << "Average weekend alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre17.getAverageWalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    studentsWhoAre17.printDalcStats();
+    studentsWhoAre17.printWalcStats();
+
     cout << "--" << endl;
     cout << "Number of students who are 18: " << studentsWhoAre18.getStudentsSize() << endl;
-    cout << "Average weekday alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre18.getAverageDalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
-    cout << "Average weekend alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre18.getAverageWalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    studentsWhoAre18.printDalcStats();
+    studentsWhoAre18.printWalcStats();
+
     cout << "--" << endl;
     cout << "Number of students who are 19: " << studentsWhoAre19.getStudentsSize() << endl;
-    cout << "Average weekday alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre19.getAverageDalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
-    cout << "Average weekend alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre19.getAverageWalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    studentsWhoAre19.printDalcStats();
+    studentsWhoAre19.printWalcStats();
+
     cout << "--" << endl;
     cout << "Number of students who are 20: " << studentsWhoAre20.getStudentsSize() << endl;
-    cout << "Average weekday alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre20.getAverageDalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
-    cout << "Average weekend alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre20.getAverageWalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    studentsWhoAre20.printDalcStats();
+    studentsWhoAre20.printWalcStats();
+
     cout << "--" << endl;
     cout << "Number of students who are 21: " << studentsWhoAre21.getStudentsSize() << endl;
-    cout << "Average weekday alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre21.getAverageDalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
-    cout << "Average weekend alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre21.getAverageWalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    studentsWhoAre21.printDalcStats();
+    studentsWhoAre21.printWalcStats();
+
     cout << "--" << endl;
     cout << "Number of students who are 22: " << studentsWhoAre22.getStudentsSize() << endl;
-    cout << "Average weekday alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre22.getAverageDalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
-    cout << "Average weekend alcohol consumption in this age: ";
-    tempAverage = studentsWhoAre22.getAverageWalc();
-    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
-    cout << "--" << endl;
+    studentsWhoAre22.printDalcStats();
+    studentsWhoAre22.printWalcStats();
 }
 
 double StudentContainer::getAverageDalc() {
@@ -409,6 +379,172 @@ StudentContainer StudentContainer::filterPstatus(char Pstatus) {
     return subContainer;
 }
 
+void StudentContainer::printDalcStats() {
+    if (this->students.empty()) {
+        cout << "empty data set" << endl;
+        return;
+    }
+
+    double mean = 0.0;
+    double standardDeviation = 0.0;
+    double median = 0.0;
+    int mode = 0;
+
+    vector<int> DalcVec;
+    int n = 0;
+
+    for (auto s : this->students) {
+        int temp = s.getDalc();
+        DalcVec.push_back(temp);
+        mean += temp;
+        n++;
+    }
+    mean = mean / n;
+
+    for (auto i : DalcVec) {
+        standardDeviation += pow(i - mean, 2);
+    }
+    standardDeviation = sqrt(standardDeviation / n);
+
+    std::sort (DalcVec.begin(), DalcVec.end());
+
+    if (n % 2 != 0) {
+        median = DalcVec.at(n / 2);
+    }
+    else {
+        median = (DalcVec.at((n - 1) / 2) + DalcVec.at(n / 2)) / 2.0;
+    }
+
+    int modeArray[5] = {0, 0, 0, 0, 0};
+    for (auto i : DalcVec) {
+        switch (i) {
+            case 1:
+                modeArray[0] = modeArray[0] + 1;
+                break;
+            case 2:
+                modeArray[1] = modeArray[1] + 1;
+                break;
+            case 3:
+                modeArray[2] = modeArray[2] + 1;
+                break;
+            case 4:
+                modeArray[3] = modeArray[3] + 1;
+                break;
+            case 5:
+                modeArray[4] = modeArray[4] + 1;
+        }
+    }
+    for (int i = 0; i < 5; i++) {
+        if (modeArray[i] >= modeArray[mode]) {
+            mode = i;
+        }
+    }
+    mode++;
+    cout << std::setprecision(2);
+    cout << "Weekday Alcohol statistics:\n\t";
+    cout << "Variable Dalc: mean = " << mean << " (" << Student::toStringAlc(int(round(mean))) << ") , standard deviation = ";
+    cout << standardDeviation << ", median = " << median << ", mode = " << mode << endl;
+
+}
+
+void StudentContainer::printWalcStats() {
+    if (this->students.empty()) {
+        cout << "empty data set" << endl;
+        return;
+    }
+
+    double mean = 0.0;
+    double standardDeviation = 0.0;
+    double median = 0.0;
+    int mode = 0;
+
+    vector<int> WalcVec;
+    int n = 0;
+
+    for (auto s : this->students) {
+        int temp = s.getWalc();
+        WalcVec.push_back(temp);
+        mean += temp;
+        n++;
+    }
+    mean = mean / n;
+
+    for (auto i : WalcVec) {
+        standardDeviation += pow(i - mean, 2);
+    }
+    standardDeviation = sqrt(standardDeviation / n);
+
+    for (int outer = 0; outer < n - 1; outer++) {
+        int maxIndex = outer;
+        for (int inner = outer + 1; inner < n; inner++) {
+            if (WalcVec.at(inner) > WalcVec.at(outer)) {
+                maxIndex = inner;
+            }
+        }
+        if (maxIndex != outer) {
+            int temp = WalcVec.at(outer);
+            WalcVec.at(outer) = WalcVec.at(maxIndex);
+            WalcVec.at(maxIndex) = temp;
+        }
+    }
+    if (n % 2 != 0) {
+        median = WalcVec.at(n / 2);
+    }
+    else {
+        median = (WalcVec.at((n - 1) / 2) + WalcVec.at(n / 2)) / 2.0;
+    }
+
+    int modeArray[5] = {0, 0, 0, 0, 0};
+    for (auto i : WalcVec) {
+        switch (i) {
+            case 1:
+                modeArray[0] += 1;
+                break;
+            case 2:
+                modeArray[1] += 1;
+                break;
+            case 3:
+                modeArray[2] += 1;
+                break;
+            case 4:
+                modeArray[3] += 1;
+                break;
+            case 5:
+                modeArray[4] += 1;
+        }
+    }
+    for (int i = 0; i < 5; i++) {
+        if (modeArray[i] >= modeArray[mode]) {
+            mode = i;
+        }
+    }
+    mode++;
+    cout << std::setprecision(2);
+    cout << "Weekend Alcohol statistics:\n\t";
+    cout << "Variable Walc: mean = " << mean << " (" << Student::toStringAlc(int(round(mean))) << ") , standard deviation = ";
+    cout << standardDeviation << ", median = " << median << ", mode = " << mode << endl;
+
+}
+
+StudentContainer StudentContainer::filterInternet(bool hasInternet) {
+    StudentContainer subSet;
+    for (auto s : this->students) {
+        if (s.getInternet() == hasInternet) {
+            subSet.addStudent(s);
+        }
+    }
+    return subSet;
+}
+
+StudentContainer StudentContainer::filterSex(char maleOrFemale) {
+    StudentContainer subSet;
+    for (auto s : this->students) {
+        if (s.getSex() == maleOrFemale) {
+            subSet.addStudent(s);
+        }
+    }
+    return subSet;
+}
 
 
 

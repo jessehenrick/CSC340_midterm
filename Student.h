@@ -88,6 +88,7 @@ private:
 
 public:
     // constructors
+
     explicit Student(string setSubject = "none",
                      string setSchool = "none",
                      char setSex = 'N',
@@ -122,11 +123,12 @@ public:
                      int setG1 = 0,
                      int setG2 = 0,
                      int setG3 = 0);
-
+    // default
 
 
 
     // getters
+
     string getSubject();
     string getSchool();
     char getSex();
@@ -163,6 +165,7 @@ public:
     int getG3();
 
     // setters
+
     void setSubject(const string& setSubject);
     void setSchool(const string& setSchool);
     void setSex(char setSex);
@@ -200,11 +203,16 @@ public:
 
 
     // overloads
+
     friend ostream& operator << (ostream& out, const Student& student);
+    // overloading ostream operator. never used because it's silly hard to read
 
 
     // member functions
+
     static string toStringAlc(int alc);
+    // converts integer to human-readable approximation: 0-5 -> very low, very high
+
 
 
 };
