@@ -1,6 +1,4 @@
-//
-// Created by jesse on 11/5/2021.
-//
+
 #include <vector>
 #include <string>
 #include <iostream>
@@ -12,7 +10,7 @@ ListClass::ListClass() {
 
 //object to call functions in other files
 
- //ListClass dataMoveR;
+ //ListClass dataMoveR; //unused object
 
 std::vector <std::string> ListClass::get_schoolVec() {
     return schoolVec;

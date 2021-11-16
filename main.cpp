@@ -13,38 +13,37 @@ int showMenu(double size,vector<double> sett, vector<string> setvect2, vector<st
    Student dataMover;
 
     while(true){
-        cout<<endl<<endl<<"*MENU*\n\n1- Student Profile\n2- Probability Of Drinker's Gender Chosen\n3- Probability Of Age Chosen To Be Under-aged Drinking (15-19)\n4- Probability of underage drinkers at a certain school \n5- Probability of school and gender as a dependent event\n6- Most Probable Home Type To Drink\nq- Quit\nWrite down your option here:";
+        cout<<endl<<endl<<"*MENU*\n\n1- Student Profile\n2- Probability Of Drinker's Gender Chosen\n3- Probability Of Age Chosen To Be Underaged Drinking (15-19)\n4- Proability of underage drinkers at a certian school \n5- Probability of school and gender as a dependent event\n6- Most Probable Home Type To Drink\nq- Quit"<<endl<<endl;
         cin>>userInput;
-        cout<<endl;
         switch(userInput){
             case '1':
-//profile
-                cout<<"Option 1:"<<endl;
+//profile[complex 1]
+                cout<<"option 1"<<endl;
                 dataMover.MakeProfile(size, sett, vectsex, setvect2,vecthome);
                 break;
 //prob of a gender chosen
             case '2':
-                cout<<"Option 2:"<<endl;
+                cout<<"option 2"<<endl;
                 dataMover.getProbGender( size, vectsex);
                 break;
 //prob of chosen age between both schools
             case '3':
-                cout<<"Option 3:"<<endl;
+                cout<<"option 3"<<endl;
                 dataMover.ProbOfAge(size,sett);
                 break;
 //prob of school chosen between all students
             case '4':
-                cout<<"Option 4:"<<endl;
+                cout<<"option 4"<<endl;
                 dataMover.getProbabilityOfSchool(size, setvect2);
                 break;
-//probability of a dependent event
+//probability of a dependent event[complex 2]
             case '5':
-                cout<<"Option 5:"<<endl;
+                cout<<"option 5"<<endl;
                 dataMover.getProbabilityOfSchoolAndGender(size, vectsex, setvect2);
                 break;
 //prob of home type chosen
             case '6':
-                cout<<"Option 6:"<<endl;
+                cout<<"option 6"<<endl;
                 dataMover.getProbOfHomeType(size,vecthome);
                 break;
 //quit
@@ -58,6 +57,7 @@ int showMenu(double size,vector<double> sett, vector<string> setvect2, vector<st
     }
 
 }
+/*
 int printStringVector(vector <string> &vec){
     for(long unsigned int i=0; i<vec.size(); i++){
         cout<<vec.at(i)<<", ";
@@ -73,7 +73,7 @@ int printIntVector(vector <int> &vec){
     cout<<endl<<endl;
     return 0;
 }
-
+*/
 int getFileData(string fd, ListClass &list){
     //inserts data into ListClass instance
 
@@ -129,11 +129,10 @@ int main() {
     ListClass listClass;
     Student seter;
     //WARING PLEASE CHANGE FILE PATH TO INCLUDED DATA WITH THE PROJECT RATHER THAN DATA DIRECTLY FROM KAGGLE
-    //we shortned the data list to make the computation just a little bit faster
     //I used the file path in my PC bc it works, but idk if it'll work on other devices, so i guess this
     // has to be changed per computer.
-    getFileData("C:/Users/Jaden Faustino/CSC340_midterm-working/student_data/student-mat.csv",listClass);
-    getFileData("C:/Users/Jaden Faustino/CSC340_midterm-working/student_data/student-por.csv",listClass);
+    getFileData("D:/cLION/programs/group project 2/student_data/student-mat.csv",listClass);
+    getFileData("D:/cLION/programs/group project 2/student_data/student-por.csv",listClass);
 
     double setSize = listClass.getsizeofage();
     //move file input data into vectors we can use
