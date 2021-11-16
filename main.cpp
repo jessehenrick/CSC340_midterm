@@ -13,7 +13,7 @@ int showMenu(double size,vector<double> sett, vector<string> setvect2, vector<st
    Student dataMover;
 
     while(true){
-        cout<<endl<<endl<<"*MENU*\n\n1- Student Profile\n2- Probability Of Drinker's Gender Chosen\n3- Probability Of Age Chosen To Be Under-aged Drinking (15-19)\n4- Probability of underage drinkers at a certain school \n5- Probability of school and gender as a dependent event\n6- Most Probable Home Type To Drink\nq- Quit\nWrite down your option here:";
+        cout<<endl<<endl<<"*MENU*\n\n1- Student Profile\n2- Probability Of Drinker's Gender Chosen\n3- Probability Of Age Chosen To Be Under-aged Drinking (15-19)\n4- Probability of Under-aged drinkers at a certain school \n5- Probability of school and gender as a dependent event\n6- Most Probable Home Type To Drink\nq- Quit\nWrite down your option here:";
         cin>>userInput;
         cout<<endl;
         switch(userInput){
