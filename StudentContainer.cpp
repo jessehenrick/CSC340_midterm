@@ -31,6 +31,9 @@ void StudentContainer::setStudentAt(Student setStudent, int i) {
     this->students.at(i) = move(setStudent);
 }
 
+void StudentContainer::addStudent(Student studentToAdd) {
+    this->students.push_back(studentToAdd);
+}
 
 bool StudentContainer::verifyCSVHeader(const string &lineToParse) {
     bool correctData = true;
@@ -269,6 +272,145 @@ bool StudentContainer::readFileCSV(const string& filePath, const string& classTi
     }
     return true;
 }
+
+void StudentContainer::printAgeMakeupWithAverageDalcWalc() {
+    StudentContainer studentsWhoAre15;
+    StudentContainer studentsWhoAre16;
+    StudentContainer studentsWhoAre17;
+    StudentContainer studentsWhoAre18;
+    StudentContainer studentsWhoAre19;
+    StudentContainer studentsWhoAre20;
+    StudentContainer studentsWhoAre21;
+    StudentContainer studentsWhoAre22;
+    for (auto s : this->students) {
+        switch (s.getAge()) {
+            case 15:
+                studentsWhoAre15.addStudent(s);
+                break;
+            case 16:
+                studentsWhoAre16.addStudent(s);
+                break;
+            case 17:
+                studentsWhoAre17.addStudent(s);
+                break;
+            case 18:
+                studentsWhoAre18.addStudent(s);
+                break;
+            case 19:
+                studentsWhoAre19.addStudent(s);
+                break;
+            case 20:
+                studentsWhoAre20.addStudent(s);
+                break;
+            case 21:
+                studentsWhoAre21.addStudent(s);
+                break;
+            case 22:
+                studentsWhoAre22.addStudent(s);
+                break;
+        }
+    }
+    double tempAverage;
+    cout << std::setprecision(2);
+    cout << "--" << endl;
+    cout << "Number of students who are 15: " << studentsWhoAre15.getStudentsSize() << endl;
+    cout << "Average weekday alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre15.getAverageDalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "Average weekend alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre15.getAverageWalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "--" << endl;
+    cout << "Number of students who are 16: " << studentsWhoAre16.getStudentsSize() << endl;
+    cout << "Average weekday alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre16.getAverageDalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "Average weekend alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre16.getAverageWalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "--" << endl;
+    cout << "Number of students who are 17: " << studentsWhoAre17.getStudentsSize() << endl;
+    cout << "Average weekday alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre17.getAverageDalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "Average weekend alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre17.getAverageWalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "--" << endl;
+    cout << "Number of students who are 18: " << studentsWhoAre18.getStudentsSize() << endl;
+    cout << "Average weekday alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre18.getAverageDalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "Average weekend alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre18.getAverageWalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "--" << endl;
+    cout << "Number of students who are 19: " << studentsWhoAre19.getStudentsSize() << endl;
+    cout << "Average weekday alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre19.getAverageDalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "Average weekend alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre19.getAverageWalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "--" << endl;
+    cout << "Number of students who are 20: " << studentsWhoAre20.getStudentsSize() << endl;
+    cout << "Average weekday alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre20.getAverageDalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "Average weekend alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre20.getAverageWalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "--" << endl;
+    cout << "Number of students who are 21: " << studentsWhoAre21.getStudentsSize() << endl;
+    cout << "Average weekday alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre21.getAverageDalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "Average weekend alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre21.getAverageWalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "--" << endl;
+    cout << "Number of students who are 22: " << studentsWhoAre22.getStudentsSize() << endl;
+    cout << "Average weekday alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre22.getAverageDalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "Average weekend alcohol consumption in this age: ";
+    tempAverage = studentsWhoAre22.getAverageWalc();
+    cout << tempAverage << " (" << Student::toStringAlc((int)round(tempAverage)) << ")" << endl;
+    cout << "--" << endl;
+}
+
+double StudentContainer::getAverageDalc() {
+    double count = 0;
+    double result = 0.0;
+    for (auto s : this->students) {
+        result += s.getDalc();
+        count++;
+    }
+    return result / count;
+}
+
+double StudentContainer::getAverageWalc() {
+    double count = 0;
+    double result = 0.0;
+    for (auto s : this->students) {
+        result += s.getWalc();
+        count++;
+    }
+    return result / count;
+}
+
+StudentContainer StudentContainer::filterPstatus(char Pstatus) {
+    StudentContainer subContainer;
+    for (auto s : this->students) {
+        if (s.getPstatus() == Pstatus) {
+            subContainer.addStudent(s);
+        }
+    }
+    return subContainer;
+}
+
+
+
 
 
 // string subject, string school, char sex, int age, char address, string famsize,char Pstatus, int Medu, int Fedu,

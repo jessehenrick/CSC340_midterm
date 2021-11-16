@@ -9,6 +9,7 @@
 #include <sstream>
 #include <fstream>
 #include <iostream>
+#include <cmath>
 #include "Student.h"
 
 using std::vector;
@@ -16,6 +17,7 @@ using std::move;
 using std::stringstream;
 using std::ifstream;
 using std::cerr;
+using std::cout;
 using std::endl;
 
 
@@ -36,15 +38,28 @@ public:
 
 
     // setters
-
     void setStudentsVector(vector <Student> setStudents);
     void setStudentAt(Student setStudent, int i);
+    void addStudent(Student studentToAdd);
+
 
     // member functions
-
     static bool verifyCSVHeader(const string& lineToParse);
     static Student parseLine(const string& lineToParse, const string& classTitle);
     bool readFileCSV(const string& filePath, const string& classTitle);
+    StudentContainer filterPstatus(char Pstatus);
+    StudentContainer filterPMedu(int education);
+    StudentContainer filterPMjob(string job);
+
+    // statistical functions
+    void printAgeMakeupWithAverageDalcWalc();
+    double getAverageDalc();
+    double getAverageWalc();
+    void printStandardDeviationOfDalcWalc();
+    void printMeanMedianModeofDalcWalc();
+    Student generateMeanAndModeStudent();
+    Student generateMedianAndModeStudent();
+
 
 
 };

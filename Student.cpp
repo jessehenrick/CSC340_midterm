@@ -348,22 +348,44 @@ void Student::setG3(int setG3) {
     this->G3 = setG3;
 }
 
-ostream &Student::operator<<(ostream &out) {
+ostream& operator<<(ostream &out, const Student& student) {
     out << boolalpha;
-    out << this->subject << "\t" << this->school << "\t" << this->sex << "\t" << to_string(this->age) << "\t" << this->address << "\t";
-    out << this->famsize << "\t" << this->Pstatus << "\t" << to_string(this->Medu) << "\t" << to_string(this->Fedu) << "\t";
-    out << this->Mjob << "\t" << this->Fjob << "\t" << this->reason << "\t" << this->guardian << "\t";
-    out << to_string(this->traveltime) << "\t" << to_string(this->studytime) << "\t" << to_string(this->failures) << "\t";
-    out << this->schoolsup << "\t" << this->famsup << "\t" << this->paid << "\t" << this->activities << "\t";
-    out << this->nursery << "\t" << this->higher << "\t" << this->internet << "\t" << this->romantic << "\t";
-    out << to_string(this->famrel) << "\t" << to_string(this->freetime) << "\t" << to_string(this->goout) << "\t";
-    out << to_string(this->Dalc) << "\t" << to_string(this->Walc) << "\t" << to_string(this->health) << "\t";
-    out << to_string(this->absences) << "\t" << to_string(this->G1) << "\t" << to_string(this->G2) << "\t";
-    out << to_string(this->G3) << "\n";
+    out << student.subject << "\t" << student.school << "\t" << student.sex << "\t" << to_string(student.age) << "\t" << student.address << "\t";
+    out << student.famsize << "\t" << student.Pstatus << "\t" << to_string(student.Medu) << "\t" << to_string(student.Fedu) << "\t";
+    out << student.Mjob << "\t" << student.Fjob << "\t" << student.reason << "\t" << student.guardian << "\t";
+    out << to_string(student.traveltime) << "\t" << to_string(student.studytime) << "\t" << to_string(student.failures) << "\t";
+    out << student.schoolsup << "\t" << student.famsup << "\t" << student.paid << "\t" << student.activities << "\t";
+    out << student.nursery << "\t" << student.higher << "\t" << student.internet << "\t" << student.romantic << "\t";
+    out << to_string(student.famrel) << "\t" << to_string(student.freetime) << "\t" << to_string(student.goout) << "\t";
+    out << to_string(student.Dalc) << "\t" << to_string(student.Walc) << "\t" << to_string(student.health) << "\t";
+    out << to_string(student.absences) << "\t" << to_string(student.G1) << "\t" << to_string(student.G2) << "\t";
+    out << to_string(student.G3) << "\n";
     return out;
-
 }
 
+string Student::toStringAlc(int alc) {
+    string toString;
+    switch (alc) {
+        case 1:
+            toString = "very low";
+            break;
+        case 2:
+            toString = "fairly low";
+            break;
+        case 3:
+            toString = "moderate";
+            break;
+        case 4:
+            toString = "fairly high";
+            break;
+        case 5:
+            toString = "very high";
+            break;
+        default:
+            cerr << "toStringalc(int alc) called with out of range parameter: " << alc;
+    }
+    return toString;
+}
 
 // string subject, string school, char sex, int age, char address, string famsize,char Pstatus, int Medu, int Fedu,
 // string Mjob, \n string Fjob, string reason, string guardian, int traveltime, int studytime, int failures,

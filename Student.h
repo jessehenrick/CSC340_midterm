@@ -10,6 +10,7 @@
 
 using std::string;
 using std::ostream;
+using std::cerr;
 using std::to_string;
 using std::boolalpha;
 
@@ -162,7 +163,6 @@ public:
     int getG3();
 
     // setters
-
     void setSubject(const string& setSubject);
     void setSchool(const string& setSchool);
     void setSex(char setSex);
@@ -200,12 +200,11 @@ public:
 
 
     // overloads
-
-    ostream& operator << (ostream& out);
+    friend ostream& operator << (ostream& out, const Student& student);
 
 
     // member functions
-
+    static string toStringAlc(int alc);
 
 
 };
